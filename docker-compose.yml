@@ -6,7 +6,7 @@ services:
     image: jirafeau:arm32v7-latest
     container_name: jirafeau
     environment:
-      - TITLE=Jirafeau@valtier.fr
+      - title='My Title'
     ports:
       - 3004:80
     restart: unless-stopped
