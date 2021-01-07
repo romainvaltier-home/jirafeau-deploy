@@ -1,5 +1,5 @@
 ---
-version: '3.3'
+version: '3'
 volumes:
   data:
 services:
@@ -11,12 +11,8 @@ services:
       - PUID=82
       - PGID=82
     volumes:
-      - type: bind
-        source: ${PWD}/config.local.php
-        target: /www/lib/config.local.php
-      - type : volume
-        source: data
-        target: /var/lib/jirafeau/data
+      - ${PWD}/config.local.php:/www/lib/config.local.php
+      - data:/var/lib/jirafeau/data
     ports:
       - 3004:80
     restart: unless-stopped
