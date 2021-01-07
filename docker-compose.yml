@@ -1,12 +1,14 @@
 ---
 version: '3'
+volumes:
+  data:
 services:
   jirafeau:
     build: https://gitlab.com/mojo42/Jirafeau.git
     image: jirafeau:arm32v7-latest
     container_name: jirafeau
-    environment:
-      - title='My Title'
+    volumes:
+      - data:/var/lib/jirafeau/data
     ports:
       - 3004:80
     restart: unless-stopped
