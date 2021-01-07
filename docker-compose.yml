@@ -8,6 +8,7 @@ services:
     image: jirafeau:arm32v7-latest
     container_name: jirafeau
     volumes:
+      - ./config.local.php:/www/lib/config.local.php
       - data:/var/lib/jirafeau/data
     ports:
       - 3004:80
