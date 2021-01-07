@@ -11,7 +11,9 @@ services:
       - PUID=82
       - PGID=82
     volumes:
-      - ${PWD}/config.local.php:/www/lib/config.local.php
+      - type: bind
+        source: ${PWD}/config.local.php
+        target: /www/lib/config.local.php
       - data:/var/lib/jirafeau/data
     ports:
       - 3004:80
