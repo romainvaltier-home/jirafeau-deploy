@@ -14,7 +14,9 @@ services:
       - type: bind
         source: ${PWD}/config.local.php
         target: /www/lib/config.local.php
-      - data:/var/lib/jirafeau/data
+      - type : volume
+        source: data
+        target: /var/lib/jirafeau/data
     ports:
       - 3004:80
     restart: unless-stopped
