@@ -12,7 +12,7 @@ services:
       - PGID=1000
       - TZ=Europe/Paris
     volumes:
-      - ./config.local.php:/www/lib/config.local.php
+#      - ./config.local.php:/www/lib/config.local.php
       - data:/var/lib/jirafeau/data
     ports:
       - 3004:80
